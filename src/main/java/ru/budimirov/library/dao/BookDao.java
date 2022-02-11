@@ -1,0 +1,13 @@
+package ru.budimirov.library.dao;
+
+import ru.budimirov.library.domain.Book;
+
+import java.util.List;
+
+public interface BookDao {
+    int count();
+    void insert(Book book);
+    Book getById(long id);
+    List<Book> getAll();
+    void deleteById(long id);
+}
