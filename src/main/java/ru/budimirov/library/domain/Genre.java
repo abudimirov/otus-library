@@ -1,11 +1,13 @@
 package ru.budimirov.library.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-@RequiredArgsConstructor
-public class Genre {
-    private final long id;
-    private final String name;
+@AllArgsConstructor
+public class Genre implements Serializable {
+    private long id;
+    private String name;
 }

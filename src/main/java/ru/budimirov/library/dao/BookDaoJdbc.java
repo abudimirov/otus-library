@@ -20,7 +20,6 @@ import java.util.Optional;
 public class BookDaoJdbc implements BookDao {
 
     private final NamedParameterJdbcOperations jdbc;
-    private final AuthorDaoJdbc authorDao;
 
     @Override
     public int count() {
@@ -33,11 +32,11 @@ public class BookDaoJdbc implements BookDao {
 
     @Override
     public void insert(Book book) {
-        jdbc.update("insert into books (id, name, author, genre) values (:id, :name, :author, :genre)",
+        jdbc.update("insert into books (id, name, author_id, genre_id) values (:id, :name, :author_id, :genre_id)",
             Map.of("id", book.getId(),
                 "name", book.getName(),
-                "author", book.getAuthor(),
-                "genre", book.getGenre()));
+                "author_id", book.getAuthor().getId(),
+                "genre_id", book.getGenre().getId()));
     }
 
     @Override
