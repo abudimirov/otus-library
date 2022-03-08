@@ -5,16 +5,15 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 @Entity
 @RequiredArgsConstructor
-@Setter
 @Getter
+@Setter
 @ToString
-public class Genre implements Serializable {
+public class Comment {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String content;
 }

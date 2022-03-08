@@ -1,13 +1,21 @@
 package ru.budimirov.library.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
-@Data
-@AllArgsConstructor
+@Entity
+@Setter
+@Getter
+@ToString
+@RequiredArgsConstructor
 public class Author implements Serializable {
+    @Id
+    @GeneratedValue
     private long id;
+
     private String name;
 }
