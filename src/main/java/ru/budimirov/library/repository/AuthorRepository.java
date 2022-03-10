@@ -4,4 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import ru.budimirov.library.domain.Author;
 
 public interface AuthorRepository extends CrudRepository<Author, Long> {
+    Author findAuthorByName(String name);
 }

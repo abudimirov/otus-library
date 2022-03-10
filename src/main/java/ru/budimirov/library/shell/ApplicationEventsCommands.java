@@ -35,4 +35,9 @@ public class ApplicationEventsCommands {
     public void countBook() {
         bookService.countBooks();
     }
+
+    @ShellMethod(value = "List all books", key = {"l", "list"})
+    public void listAllBooks() {
+        bookService.listAllBooks();
+    }
 }
